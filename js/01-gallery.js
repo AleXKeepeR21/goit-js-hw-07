@@ -28,7 +28,7 @@ function createGalleryItemMarkup(galleryItems) {
 
 // console.log(galleryItems);
 
-galleryMarkup.addEventListener('click', onGalleryRefClick);
+galleryRef.addEventListener('click', onGalleryRefClick);
 
 let modalWindow;
 
