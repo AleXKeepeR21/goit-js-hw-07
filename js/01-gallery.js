@@ -47,5 +47,7 @@ function onGalleryRefClick(event) {
 }
 
 function onEscapeClose(event) {
-  modalWindow.close();
+  if (event.key === "Escape") {
+    modalWindow.close();
+  }
 }
