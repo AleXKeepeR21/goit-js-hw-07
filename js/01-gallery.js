@@ -38,12 +38,20 @@ function onGalleryRefClick(event) {
   }
   console.log(event.target);
   modalWindow = basicLightbox.create(
-    ` <img src="${event.target.dataset.source}" > `
+    ` <img src="${event.target.dataset.source}" > `,
+    {
+      onShow: () => {
+        window.addEventListener("keydown", onEscapeClose);
+      },
+      onClose: () => {
+        window.removeEventListener("keydown", onEscapeClose);
+      },
+    }
   );
 
   modalWindow.show(onClickModalClose);
 
-  window.addEventListener("keydown", onEscapeClose);
+  // window.addEventListener("keydown", onEscapeClose);
 }
 
 function onEscapeClose(event) {
